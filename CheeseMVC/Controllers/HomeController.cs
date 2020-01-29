@@ -20,8 +20,8 @@ namespace CheeseMVC.Controllers
 
         public IActionResult Index()
         {
-            // return View();
-            return RedirectToAction("", "Cheese");
+            return View();
+            //return RedirectToAction("", "Cheese");
         }
 
         public IActionResult Privacy()
