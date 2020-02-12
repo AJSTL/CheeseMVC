@@ -108,3 +108,4 @@ C:\LaunchCode\CheeseMVC\CheeseMVC\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.Code
 C:\LaunchCode\CheeseMVC\CheeseMVC\obj\Debug\netcoreapp3.1\CheeseMVC.MvcApplicationPartsAssemblyInfo.cache
 C:\LaunchCode\CheeseMVC\CheeseMVC\obj\Debug\netcoreapp3.1\Razor\Views\Cheese\Index.cshtml.g.cs
 C:\LaunchCode\CheeseMVC\CheeseMVC\obj\Debug\netcoreapp3.1\Razor\Views\Cheese\Add.cshtml.g.cs
+C:\LaunchCode\CheeseMVC\CheeseMVC\obj\Debug\netcoreapp3.1\Razor\Views\Cheese\Remove.cshtml.g.cs

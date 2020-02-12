@@ -19,34 +19,68 @@ namespace CheeseMVC.Controllers
         Modify the NewCheese action to insert the description of the new cheese into the cheeses dictionary.
         Display the description field in the Cheese/Index.cshtml view template.*/
 
-        private static Dictionary<string,string> Cheeses = new Dictionary<string, string>();
+        private static Dictionary<string, string> Cheeses = new Dictionary<string, string>();
 
 
         //calls the index method of our cheese controller
         // GET: /<controller>/
         public IActionResult Index()
-            {
-               ViewBag.Cheeses = Cheeses;
+        {
+            ViewBag.Cheeses = Cheeses;
 
-                return View();
-            }
-
-
-            public IActionResult Add()
-            {
-                 return View();
-            }
+            return View();
+        }
 
 
-            [HttpPost]
-            [Route("/Cheese/Add")]
-            public IActionResult NewCheese(string name, string description)
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        //public IActionResult Duplicate(string name)
+        //{
+       //     Content("{0} is a duplicate cheese. Please enter a different cheese.", name); //does not work
+      //   return Redirect("/Cheese"); 
+      //  }
+
+
+        [HttpPost]
+        [Route("/Cheese/Add")]
+        public IActionResult NewCheese(string name, string description)
+        {
+            //add validation if nothing is entered for name and/or description
+            //if (Cheeses.ContainsKey(name))
+           // {
+           //     return Duplicate(name);
+           // }
+            //else
             {
                 // add the new cheese
                 Cheeses.Add(name, description);
 
                 return Redirect("/Cheese");
             }
+        }
+
+        public IActionResult Remove()
+        {
+            ViewBag.cheeses = Cheeses;
+            return View();
+        }
+
+        [HttpPost]
+        [Route("/Cheese/Remove")]
+        public IActionResult RemoveCheese(string[] cheeseName)
+        {
+            {
+                // remove the old cheese
+                foreach (string cheese in cheeseName)
+                {
+                    Cheeses.Remove(cheese);
+                }
+                return Redirect("/Cheese");
+            }
+        }
 
     }
 }
