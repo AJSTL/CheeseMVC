@@ -2,7 +2,7 @@
     //Layout = null;
 }
 
-<h1>Remove Cheese</h1>
+<h1>@ViewBag.title</h1>
 
 @if (ViewBag.cheeses.Count == 0)
 {
@@ -10,15 +10,37 @@
 }
 else
 {
+
+<form method="post">
+
+    @foreach (var cheese in ViewBag.cheeses)
+    {
+        <input type="checkbox" name="cheeseIds" id="@cheese.CheeseId" value="@cheese.CheeseId" />
+        <label for="@cheese.CheeseId">@cheese.Name</label>
+        <br />
+    }
+    <input type="submit" value="Remove Cheese" />
+</form>
+
+
+
+    /*
     <form method="post">
-            @foreach (string cheese in ViewBag.Cheeses.Keys)
-            {
-                <label>
-                    <input type="checkbox" name="cheeseName" value="@cheese" />
-                    @cheese
-                </label>
-                <br />
-            }
+        @foreach (string cheese in ViewBag.Cheeses.Keys)
+        {
+            <!-- method to remove multiple cheeses with checkboxes -->
+            <label>
+                <input type="checkbox" name="cheeseName" value="@cheese" />
+                @cheese
+            </label>
+            <br />
+        }
         <input type="submit" value="Remove Cheese" />
+        }
+        
+
     </form>
+  */
 }
+
+

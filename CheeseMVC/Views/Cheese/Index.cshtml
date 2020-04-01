@@ -17,11 +17,23 @@
 }
 
 
-<ul style="list-style-type:none;">
-    @foreach (KeyValuePair<string, string> cheese in ViewBag.Cheeses) //(object cheese in ViewBag.Cheeses)
-    {
-       // <li>@cheese</li>; // this works and displays [name, description] in brackets
-       <li>@cheese.Key: @cheese.Value</li>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
 
-     }
-</ul>
+    @foreach (var cheese in ViewBag.Cheeses) //(object cheese in ViewBag.Cheeses)
+    {
+        // <li>@cheese</li>; // this works and displays [name, description] in brackets
+        //<li>@cheese.Key: @cheese.Value</li>
+
+     <tr>
+         <td>@cheese.Name</td>
+         <td>@cheese.Description</td>
+     </tr>
+    }
+</table>
+
+     
+
