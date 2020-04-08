@@ -1,17 +1,13 @@
-﻿@*
+﻿@using CheeseMVC.Models
+@model List<Cheese>
 
-*@
-@{
-    //Layout = null;
-
-}
 <link rel="stylesheet" href="~/css/site.css" />
 
-<h1>My Cheeses</h1>
+<h1>@ViewBag.Title</h1>
 
 <p><a asp-controller="Cheese" asp-action="Add">Add Cheese?</a></p>
 
-@if (ViewBag.Cheeses.Count == 0)
+@if (Model.Count == 0) // note: uppercase Model
 {
     <p>No cheeses found.</p>
 }
@@ -23,17 +19,17 @@
         <th>Description</th>
     </tr>
 
-    @foreach (var cheese in ViewBag.Cheeses) //(object cheese in ViewBag.Cheeses)
+    @foreach (var cheese in Model) //(object cheese in ViewBag.Cheeses)
     {
         // <li>@cheese</li>; // this works and displays [name, description] in brackets
         //<li>@cheese.Key: @cheese.Value</li>
 
-     <tr>
-         <td>@cheese.Name</td>
-         <td>@cheese.Description</td>
-     </tr>
+        <tr>
+            <td>@cheese.Name</td>
+            <td>@cheese.Description</td>
+        </tr>
     }
 </table>
 
-     
+
 
